@@ -19,3 +19,6 @@ docs/local-control/
 
 .vercel
 .env*
+precheck-report.json
+precheck-report.txt
+grade-report.json

@@ -51,8 +51,9 @@ withdrawals have exact 1 GEN native decreases and bound finalized external
 message proofs. All credits, locked value and native contract balance end at
 zero. One read-only live integration test passes and generates measured fees.
 
-The public [CI run](https://github.com/duclucky/parity-option-genlayer/actions/runs/37130417455)
-passes for commit `cc3074e`; CI for later commits must be checked separately.
+The public [CI workflow](https://github.com/duclucky/parity-option-genlayer/actions/workflows/check.yml)
+runs the full local check on pushes and pull requests. A successful run must be
+matched to the current public commit when reviewing readiness.
 Production HTTP checks and browser canonical reads pass on the live app.
 Browser-wallet signatures remain pending: the available test browser has no
 wallet extension. The successful network lifecycle was signed by the local

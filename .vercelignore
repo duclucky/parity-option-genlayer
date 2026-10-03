@@ -16,3 +16,6 @@ docs/local-control/
 AGENTS.md
 CLAUDE.md
 *.log
+precheck-report.json
+precheck-report.txt
+grade-report.json

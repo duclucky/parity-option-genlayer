@@ -5,6 +5,13 @@ The source-bound deployment and current canonical views are recorded in
 checked against `gen_getContractCode`; deployment execution is successful and
 finalized. These are script-signed deployment facts, not browser-wallet proof.
 
+Deployment Result: SUCCESS. The recorded deployment hash is
+`0xa44709cfda951f7d59fee5f511fe7846d03bd8bf4035af1cc954e5940376994e`.
+Explorer displays SUCCESS, and the current read-only integration asserts
+FINALIZED plus retained txExecutionResult 1 (FINISHED_WITH_RETURN) for this
+transaction. The source-bound contract address is
+`0x6bA8F313f2040E7774978aF37f8adAd875a3AF54` on Studio Dev chain 61997.
+
 ## Fee simulation clock compatibility
 
 On 2026-10-03 the current SDK's `estimateTransactionFeesForWrite` call to

@@ -1,0 +1,32 @@
+{
+  "verifiedAt": "2026-10-03T15:02:24Z",
+  "liveUrl": "https://parity-option-genlayer.vercel.app",
+  "deploymentId": "dpl_5MbNxAZGB4PWiu4A9oX5LmiMVTtC",
+  "deploymentUrl": "https://parity-option-genlayer-qmv1c1tlg-duckys-projects-bc83c6a0.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "project": "parity-option-genlayer",
+  "rootDirectory": "frontend",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "nodeVersion": "24.x",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "checks": {
+    "homepageHttp": 200,
+    "htmlContainsProjectName": true,
+    "htmlContainsReactRoot": true,
+    "icRpcHealthHttp": 200,
+    "walletRpcHealthHttp": 200,
+    "bothRpcChainId": 61997,
+    "browserCanonicalRead": "demo-match-v1: REDEEMED, seven history events, three MATCH dimensions",
+    "browserConsoleCorsErrors": 0,
+    "browserConsoleFailedFetchErrors": 0,
+    "screenshot": "frontend-canonical-read.png"
+  },
+  "limitations": {
+    "browserWalletSignature": "PENDING_REAL_EVIDENCE: enabled browser inventory has IAB and MCP Apps only",
+    "builderDiagnostics": "API transpilation reported missing node/vite/client/vitest type libraries. Deployment completed READY and both functions were verified; independent project TypeScript includes API/server and passes.",
+    "frontendSourceIdentity": "Initial deployment uploaded audited working-tree hosting changes after local checks. Contract source remains source-bound to its recorded deployment; frontend is not claimed as a Git auto-deployment."
+  }
+}

@@ -5,7 +5,7 @@ import { abi, createFeesDistribution } from 'genlayer-js';
 import { studioDevnet } from 'genlayer-js/chains';
 import { decodeFunctionData, fromRlp, toHex, hexToBytes } from 'viem';
 import { createSDKAdapter } from '../frontend/src/sdk-adapter.ts';
-import { forwardRpc } from '../frontend/api/rpc.ts';
+import { forwardRpc } from '../frontend/server/rpc.ts';
 
 const owner='0x1111111111111111111111111111111111111111';
 const holder='0x2222222222222222222222222222222222222222';

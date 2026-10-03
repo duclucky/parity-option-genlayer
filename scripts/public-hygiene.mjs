@@ -10,11 +10,12 @@ const git=(args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:16
 const lines=v=>v?v.split(/\r?\n/):[];
 const allowed=new Set(JSON.parse(await readFile(resolve(root,'scripts/public-files.json'),'utf8')));
 const tracked=lines(git(['ls-files'])),staged=lines(git(['diff','--cached','--name-only']));
+const stagedContent=new Set(lines(git(['diff','--cached','--diff-filter=ACMR','--name-only'])));
 const commits=lines(git(['rev-list','--all']));
 const historical=commits.flatMap(commit=>lines(git(['ls-tree','-r','--name-only',commit])));
 const blockedPaths=new Set([...tracked,...staged,...historical].filter(p=>!allowed.has(p)));
 const secrets=[];
-for(const path of [resolve(dirname(root),'.env'),resolve(root,'.env')])if(existsSync(path)){
+for(const path of [resolve(dirname(root),'.env'),resolve(root,'.env'),resolve(root,'.env.local'),resolve(root,'frontend/.env'),resolve(root,'frontend/.env.local')])if(existsSync(path)){
   const values=parseEnv(await readFile(path,'utf8'));
   for(const [key,value] of Object.entries(values))if(/private.?key|secret|token|password|mnemonic|api.?key|seed/i.test(key)&&value.length>=12)secrets.push(value);
 }
@@ -23,7 +24,8 @@ const privateLiteral=/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|(?:priva
 function inspect(path,content){if(secrets.some(value=>content.includes(value))||privateLiteral.test(content))blockedContent.add(path);}
 for(const path of new Set([...tracked,...staged])){
   if(path.endsWith('.png'))continue;
-  if(staged.includes(path))inspect(path,git(['show',`:${path}`]));
+  if(stagedContent.has(path))inspect(path,git(['show',`:${path}`]));
+  else if(staged.includes(path))continue;
   else inspect(path,await readFile(resolve(root,path),'utf8'));
 }
 for(const commit of commits){
@@ -33,7 +35,7 @@ for(const commit of commits){
   }
 }
 const ignoredLocal={};
-for(const path of ['.env','frontend/.env','.venv','node_modules','.vercel','frontend/.vercel'])if(existsSync(resolve(root,path))){
+for(const path of ['.env','.env.local','frontend/.env','frontend/.env.local','.venv','node_modules','.vercel','frontend/.vercel'])if(existsSync(resolve(root,path))){
   try{ignoredLocal[path]=!!git(['check-ignore',path]);}catch{ignoredLocal[path]=false;}
 }
 const contract=await readFile(resolve(root,'contracts/parity_option.py'));

@@ -126,3 +126,26 @@ One read-only live integration test also passes separately and generates fees.
 
 Browser-wallet signatures remain PENDING_REAL_EVIDENCE. No provider is injected,
 no private key is exposed to the browser, and script signatures remain distinct.
+
+## Production verification — 2026-10-03
+
+Vercel production deployment dpl_5MbNxAZGB4PWiu4A9oX5LmiMVTtC is READY
+at https://parity-option-genlayer.vercel.app. Root frontend/, Vite, npm run build,
+dist, Node 24 and the actual public address are confirmed by project API reads.
+`vercel deploy --dry --format=json` exposes 65 regular allowlisted upload files,
+with no env, wallet, vendor runtime or private control files. Shared RPC code
+moved into server/ so it is not treated as an extra public function route.
+
+`curl -I` returns HTTP 200; the first 4000 HTML characters contain ParityOption
+and div id="root". Both /api/ic-rpc and /api/wallet-rpc health checks return HTTP
+200 with verified Studio Dev chain 61997. The production browser deep link reads
+REDEEMED, seven canonical history events and three MATCH dimensions; its error
+log contains no entries. Screenshot: evidence/production/frontend-canonical-read.png.
+
+The function transpiler emitted type-library lookup diagnostics while the
+deployment completed. This is retained as an unresolved builder warning;
+successful function probes and canonical reads do not prove the warning's root
+cause. Independent TypeScript now includes api/ and server/; npm run check passes
+91 direct, 5 Node and 51 frontend tests with the production build. Source visuals
+remain unchanged. The enabled browser inventory is still IAB/MCP Apps only,
+so actual browser-wallet signing remains pending.

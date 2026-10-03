@@ -10,7 +10,8 @@ const git=(args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',maxBuffer:16
 const lines=v=>v?v.split(/\r?\n/):[];
 const allowed=new Set(JSON.parse(await readFile(resolve(root,'scripts/public-files.json'),'utf8')));
 const tracked=lines(git(['ls-files'])),staged=lines(git(['diff','--cached','--name-only']));
-const historical=lines(git(['rev-list','--all','--objects'])).map(v=>v.slice(v.indexOf(' ')+1)).filter(v=>v.includes('.')||v.includes('/'));
+const commits=lines(git(['rev-list','--all']));
+const historical=commits.flatMap(commit=>lines(git(['ls-tree','-r','--name-only',commit])));
 const blockedPaths=new Set([...tracked,...staged,...historical].filter(p=>!allowed.has(p)));
 const secrets=[];
 for(const path of [resolve(dirname(root),'.env'),resolve(root,'.env')])if(existsSync(path)){
@@ -25,7 +26,7 @@ for(const path of new Set([...tracked,...staged])){
   if(staged.includes(path))inspect(path,git(['show',`:${path}`]));
   else inspect(path,await readFile(resolve(root,path),'utf8'));
 }
-for(const commit of lines(git(['rev-list','--all']))){
+for(const commit of commits){
   for(const path of lines(git(['ls-tree','-r','--name-only',commit]))){
     if(path.endsWith('.png'))continue;
     inspect(`${commit.slice(0,7)}:${path}`,git(['show',`${commit}:${path}`]));

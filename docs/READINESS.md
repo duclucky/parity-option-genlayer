@@ -1,8 +1,9 @@
 # ParityOption readiness audit
 
 Status: implementation, Studio Dev lifecycle and Chrome/OKX buyer offer/refund
-are verified. This is a copy-ready submission packet, not a submitted or accepted
-contribution. Category is Projects. Official acceptance is not claimed.
+are verified. The owner submitted ParityOption on October 3, 2026. The
+authenticated Portal shows Projects, Pending review and five evidence items.
+The packet below records the submitted claims; official acceptance is not claimed.
 
 ## Verified facts
 
@@ -106,7 +107,21 @@ also unproven. Actual successful signed review and transaction-time guards are
 separately evidenced. External adoption, gateway enforcement, delivery and legal
 enforceability remain outside this contribution's claims.
 
-No portal submission or steward acceptance is claimed. Future milestone scope
+Portal submission is verified; steward acceptance remains pending. Future milestone scope
 may include multiple ranked holders, deterministic cascading exercise windows
 and a real consumer gateway after this version is accepted and those additions
 receive their own specifications and evidence.
+
+## Lessons retained
+
+Exact native balance decrease and the recipient-bound EVM outgoing message are
+required withdrawal proof; parent finalization and zero internal credit alone
+are insufficient. Transaction-authored scope creates protocol rights without
+proving external delivery. Browser wallet signatures remain distinct from
+script-signed counterparties. Browser reproduction uses actual UI controls;
+repository and command references belong in evidence fields.
+
+The first public push had a shell audit-stop deviation. Corrected recursive
+history/content scans found no leaked secret or private control file. Subsequent
+pushes require a standalone passing hygiene gate before the separate push.
+This procedural deviation is retained rather than claimed never to have happened.

@@ -1,0 +1,31 @@
+{
+  "network": "studio-dev",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "review": {
+    "at": 1791043804,
+    "attempt": 1,
+    "coverage": [
+      "scope",
+      "offer"
+    ],
+    "decisions": [
+      {
+        "class": "MATCH",
+        "id": "purpose"
+      },
+      {
+        "class": "MATCH",
+        "id": "deliverables"
+      },
+      {
+        "class": "MATCH",
+        "id": "restrictions"
+      }
+    ],
+    "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+    "option_id": "demo-browser-match-v1",
+    "outcome": "MATCH",
+    "root_ids": [],
+    "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5"
+  }
+}

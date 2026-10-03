@@ -11,7 +11,7 @@ const useAdapter=()=>useContext(AdapterContext);
 const scopeKeys=['purpose','deliverables','restrictions'] as const;
 const scopeNames={purpose:'Purpose',deliverables:'What the reservation includes',restrictions:'Limits and obligations'};
 const blankScope: Scope={purpose:'',deliverables:'',restrictions:''};
-const time=(n: number)=>n?new Date(n*1000).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Not yet set';
+const time=(n: number)=>n?new Date(n*1000).toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'}):'Not yet set';
 function useNow(){const [now,setNow]=useState(Math.floor(Date.now()/1000));useEffect(()=>{const t=setInterval(()=>setNow(Math.floor(Date.now()/1000)),1000);return()=>clearInterval(t);},[]);return now;}
 function useLoad<T>(load: ()=>Promise<T>, dependencies: unknown[]) {
   const [state,setState]=useState<{value?: T;error?: string;loading: boolean}>({loading:true});

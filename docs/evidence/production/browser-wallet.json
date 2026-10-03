@@ -1,0 +1,98 @@
+{
+  "observedAt": "2026-10-03T16:19:51.820Z",
+  "browser": "Chrome",
+  "wallet": "OKX Wallet",
+  "selection": "explicit owner choice",
+  "network": "studio-dev",
+  "chainId": 61997,
+  "liveUrl": "https://parity-option-genlayer.vercel.app",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "buyer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+  "entityId": "demo-browser-match-v1",
+  "browserWrites": [
+    {
+      "method": "submit_offer",
+      "hash": "0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+      "valueGEN": "1",
+      "quotedFeeBudgetGEN": "0.000378529200010352",
+      "receipt": {
+        "hash": "0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:06:09.594944+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+        "observedAt": "2026-10-03T16:08:39.704Z"
+      }
+    },
+    {
+      "method": "withdraw_credit",
+      "hash": "0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+      "attachedGEN": "0",
+      "creditReturnedGEN": "1",
+      "quotedFeeBudgetGEN": "0.000759796800010352",
+      "receipt": {
+        "hash": "0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:15:43.635152+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+        "observedAt": "2026-10-03T16:16:59.295Z"
+      },
+      "nativeTransfer": {
+        "expectedGEN": "1",
+        "contractDecreaseGEN": "1",
+        "recipientNetIncreaseGEN": "0.999873694999999177",
+        "nativeMessages": [
+          {
+            "messageType": "external",
+            "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "valueGEN": "1",
+            "emptyData": true,
+            "onAcceptance": false
+          }
+        ],
+        "proven": true
+      }
+    }
+  ],
+  "otherActors": "Authorized script-signed provider and holder; their transactions are not claimed as browser writes",
+  "observations": {
+    "canonicalOfferReload": "OFFERED",
+    "canonicalSemanticReview": "MATCH in purpose, deliverables and restrictions",
+    "canonicalFinalState": "REDEEMED",
+    "canonicalCreditBeforeWithdrawalGEN": "1",
+    "canonicalCreditAfterWithdrawalGEN": "0",
+    "accountMenu": true,
+    "disconnectClearsAccountAndWriteControls": true,
+    "explicitOKXReconnect": true,
+    "observedConsoleErrors": 0,
+    "observedConsoleWarnings": 0,
+    "sessionReloadRestoresOKX": true,
+    "finalEnglishDates": true
+  },
+  "screenshots": [
+    "chrome-wallet-picker.png",
+    "chrome-offer-wallet-request.png",
+    "chrome-offer-finalized.png",
+    "chrome-match-verdict.png",
+    "chrome-refund-credit.png",
+    "chrome-withdraw-wallet-request.png",
+    "chrome-withdraw-finalized.png",
+    "chrome-disconnected.png",
+    "chrome-final-canonical.png"
+  ],
+  "limits": [
+    "Wallet confirmation was performed directly by the owner because chrome-extension URLs are blocked by browser tooling",
+    "The picker displayed duplicate OKX entries via discovered provider paths",
+    "Only buyer submit_offer and withdraw_credit have actual browser-wallet write evidence; other write controls have implementation and local tests",
+    "Failure and retry handling is covered locally; no live buyer rejection is claimed"
+  ]
+}

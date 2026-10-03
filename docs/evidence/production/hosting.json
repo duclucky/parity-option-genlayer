@@ -1,8 +1,8 @@
 {
-  "verifiedAt": "2026-10-03T15:02:24Z",
+  "verifiedAt": "2026-10-03T16:25:20.693Z",
   "liveUrl": "https://parity-option-genlayer.vercel.app",
-  "deploymentId": "dpl_5MbNxAZGB4PWiu4A9oX5LmiMVTtC",
-  "deploymentUrl": "https://parity-option-genlayer-qmv1c1tlg-duckys-projects-bc83c6a0.vercel.app",
+  "deploymentId": "dpl_GS6BcuCPueuKVavAWJrG5Qf7YkED",
+  "deploymentUrl": "https://parity-option-genlayer-rhpo7l7wl-duckys-projects-bc83c6a0.vercel.app",
   "readyState": "READY",
   "target": "production",
   "project": "parity-option-genlayer",
@@ -22,11 +22,28 @@
     "browserCanonicalRead": "demo-match-v1: REDEEMED, seven history events, three MATCH dimensions",
     "browserConsoleCorsErrors": 0,
     "browserConsoleFailedFetchErrors": 0,
-    "screenshot": "frontend-canonical-read.png"
+    "screenshot": "frontend-canonical-read.png",
+    "finalBrowserCanonicalRead": "demo-browser-match-v1: REDEEMED, actual OKX buyer credit 0 GEN, English local date, session reload restored",
+    "finalScreenshot": "chrome-final-canonical.png",
+    "browserBuyerWrites": "submit_offer and withdraw_credit: finalized; see browser-wallet.json"
   },
   "limitations": {
-    "browserWalletSignature": "PENDING_REAL_EVIDENCE: enabled browser inventory has IAB and MCP Apps only",
+    "browserWalletSignature": "Chrome/OKX buyer submit_offer and withdraw_credit finalized; provider/holder actions are script-signed; see browser-wallet.json",
     "builderDiagnostics": "API transpilation reported missing node/vite/client/vitest type libraries. Deployment completed READY and both functions were verified; independent project TypeScript includes API/server and passes.",
-    "frontendSourceIdentity": "Initial deployment uploaded audited working-tree hosting changes after local checks. Contract source remains source-bound to its recorded deployment; frontend is not claimed as a Git auto-deployment."
+    "frontendSourceIdentity": "Audited local CLI production deployment; frontend is bound to the retained App SHA256 and checked source, not claimed as a Git auto-deployment"
+  },
+  "frontendAppSha256": "baec3962e0a5bd34a967a4d1884dd662716664d2cba2841965ea279b2be472bc",
+  "superseded": [
+    {
+      "deploymentId": "dpl_5MbNxAZGB4PWiu4A9oX5LmiMVTtC",
+      "deploymentUrl": "https://parity-option-genlayer-qmv1c1tlg-duckys-projects-bc83c6a0.vercel.app",
+      "status": "READY",
+      "reason": "English date display and verified Chrome/OKX evidence update"
+    }
+  ],
+  "uploadAudit": {
+    "regularAllowlistedFiles": 80,
+    "emptyDirectoryEntries": 6,
+    "blockedPaths": []
   }
 }

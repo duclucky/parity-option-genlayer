@@ -1,0 +1,57 @@
+{
+  "network": "studio-dev",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "sourceCommit": "4dd8ecc9cde852456b60f3903f389b3ecd5a12a3",
+  "browserBuyer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+  "browserWrites": [
+    "submit_offer",
+    "withdraw_credit"
+  ],
+  "otherActors": "authorized script-signed provider and holder",
+  "at": "2026-10-03T16:16:59.298Z",
+  "option": {
+    "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+    "chain_id": 61997,
+    "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+    "deadline": 1791053548,
+    "exercise_deadline": 1791045604,
+    "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+    "id": "demo-browser-match-v1",
+    "offer": {
+      "deliverables": "A single reading reservation lasting sixty minutes",
+      "purpose": "Book a private session for reading a research paper",
+      "restrictions": "Copies must not be shared and the source must be credited"
+    },
+    "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+    "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+    "redeem_deadline": 1791130275,
+    "review_count": 1,
+    "scope": {
+      "deliverables": "One private one-hour reading session",
+      "purpose": "Reserve one research-paper reading session",
+      "restrictions": "No redistribution; attribution is required"
+    },
+    "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+    "slot": "browser-match-slot-v1",
+    "status": "REDEEMED",
+    "title": "Research reading reservation",
+    "window": 1800,
+    "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+  },
+  "accounting": {
+    "credit_gen": "0",
+    "invariant": true,
+    "locked_gen": "0",
+    "received_gen": "4",
+    "withdrawn_gen": "4"
+  },
+  "contractBalanceGEN": "0",
+  "creditsGEN": {
+    "provider": "0",
+    "holder": "0",
+    "buyer": "0",
+    "browserBuyer": "0"
+  },
+  "browserBuyerBalanceGEN": "2.174143780750102209",
+  "complete": true
+}

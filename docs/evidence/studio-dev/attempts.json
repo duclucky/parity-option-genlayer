@@ -996,6 +996,1063 @@
         "zeroCredit": true,
         "proven": true
       }
+    },
+    "browser-match-create": {
+      "role": "provider",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "create_option",
+      "args": [
+        "demo-browser-match-v1",
+        "Research reading reservation",
+        "browser-match-slot-v1",
+        "0x45aD397c438397A702B53a7499a78D08961D39Db",
+        "Reserve one research-paper reading session",
+        "One private one-hour reading session",
+        "No redistribution; attribution is required",
+        1791053548,
+        1800
+      ],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000378560400010352",
+      "beforeContractGEN": "0",
+      "beforeActorGEN": "63.293084036332938303",
+      "startedAt": "2026-10-03T15:52:40.522Z",
+      "stage": "finalized",
+      "hash": "0x0f8b10137372bd1ebc147edf6a9dc69cb1d5f78a97cb45738833516312fb8e3a",
+      "receipt": {
+        "hash": "0x0f8b10137372bd1ebc147edf6a9dc69cb1d5f78a97cb45738833516312fb8e3a",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T15:52:41.873807+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x0f8b10137372bd1ebc147edf6a9dc69cb1d5f78a97cb45738833516312fb8e3a",
+        "observedAt": "2026-10-03T15:53:22.625Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T15:52:29.039Z",
+          "option": null,
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "2",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174348722000103855"
+        },
+        "after": {
+          "at": "2026-10-03T15:53:22.627Z",
+          "option": {
+            "buyer": "",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": null,
+            "offer_digest": "",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "DRAFT",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "2",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174348722000103855"
+        }
+      },
+      "afterActorGEN": "63.29300539358293748"
+    },
+    "browser-match-accept": {
+      "role": "holder",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "accept_option",
+      "args": [
+        "demo-browser-match-v1",
+        "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5"
+      ],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000378512400010352",
+      "beforeContractGEN": "0",
+      "beforeActorGEN": "17.660565117666655524",
+      "startedAt": "2026-10-03T15:53:40.583Z",
+      "stage": "finalized",
+      "hash": "0x2dd389436067ade58de09145cc5dcf4c1549cb6bd0cd3572fce41f562fdc8709",
+      "receipt": {
+        "hash": "0x2dd389436067ade58de09145cc5dcf4c1549cb6bd0cd3572fce41f562fdc8709",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T15:53:42.272889+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2dd389436067ade58de09145cc5dcf4c1549cb6bd0cd3572fce41f562fdc8709",
+        "observedAt": "2026-10-03T15:54:23.644Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T15:53:29.368Z",
+          "option": {
+            "buyer": "",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": null,
+            "offer_digest": "",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "DRAFT",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "2",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174348722000103855"
+        },
+        "after": {
+          "at": "2026-10-03T15:54:23.648Z",
+          "option": {
+            "buyer": "",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": null,
+            "offer_digest": "",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "ACTIVE",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "2",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174348722000103855"
+        }
+      },
+      "afterActorGEN": "17.660486484916654701"
+    },
+    "browser-match-offer": {
+      "source": "actual Chrome OKX wallet",
+      "role": "browserBuyer",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "method": "submit_offer",
+      "args": [
+        "demo-browser-match-v1",
+        "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+        "Book a private session for reading a research paper",
+        "A single reading reservation lasting sixty minutes",
+        "Copies must not be shared and the source must be credited"
+      ],
+      "valueGEN": "1",
+      "hash": "0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+      "stage": "finalized",
+      "receipt": {
+        "hash": "0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:06:09.594944+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845",
+        "observedAt": "2026-10-03T16:08:39.704Z"
+      },
+      "beforeContractGEN": "0",
+      "beforeActorGEN": "2.174348722000103855",
+      "afterActorGEN": "1.174270085750103032",
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T15:54:32.389Z",
+          "option": {
+            "buyer": "",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": null,
+            "offer_digest": "",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "ACTIVE",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "2",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174348722000103855"
+        },
+        "after": {
+          "at": "2026-10-03T16:08:39.707Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "OFFERED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      }
+    },
+    "browser-match-endorse": {
+      "role": "provider",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "endorse_offer",
+      "args": [
+        "demo-browser-match-v1",
+        "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465"
+      ],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000378516000010352",
+      "beforeContractGEN": "1",
+      "beforeActorGEN": "63.29300539358293748",
+      "startedAt": "2026-10-03T16:08:55.489Z",
+      "stage": "finalized",
+      "hash": "0x6c88d6ef796c3450e3ce56f28eb7c2a7384a98cd880bb1e452e9b3fe75d03316",
+      "receipt": {
+        "hash": "0x6c88d6ef796c3450e3ce56f28eb7c2a7384a98cd880bb1e452e9b3fe75d03316",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:08:56.851576+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x6c88d6ef796c3450e3ce56f28eb7c2a7384a98cd880bb1e452e9b3fe75d03316",
+        "observedAt": "2026-10-03T16:09:31.920Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:08:45.548Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "OFFERED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:09:31.923Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "ENDORSED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      },
+      "afterActorGEN": "63.292926760082936657"
+    },
+    "browser-match-review": {
+      "role": "holder",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "review_offer",
+      "args": [
+        "demo-browser-match-v1",
+        1
+      ],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000386668800010352",
+      "beforeContractGEN": "1",
+      "beforeActorGEN": "17.660486484916654701",
+      "startedAt": "2026-10-03T16:10:02.812Z",
+      "stage": "finalized",
+      "hash": "0x5ac4acc6c0753bf088761bc822906cbaa30770aa8e3d13187c6ef522fe757567",
+      "receipt": {
+        "hash": "0x5ac4acc6c0753bf088761bc822906cbaa30770aa8e3d13187c6ef522fe757567",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:10:04.281303+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x5ac4acc6c0753bf088761bc822906cbaa30770aa8e3d13187c6ef522fe757567",
+        "observedAt": "2026-10-03T16:10:56.853Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:09:38.887Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 0,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 0,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "ENDORSED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:10:56.856Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "MATCH",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      },
+      "afterActorGEN": "17.660406152916653878"
+    },
+    "browser-match-exercise": {
+      "role": "holder",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "exercise_option",
+      "args": [
+        "demo-browser-match-v1"
+      ],
+      "valueGEN": "1",
+      "feeBudgetGEN": "0.000378528000010352",
+      "beforeContractGEN": "1",
+      "beforeActorGEN": "17.660406152916653878",
+      "startedAt": "2026-10-03T16:11:14.032Z",
+      "stage": "finalized",
+      "hash": "0xd9b95a8dc329aa47a5420c681d91300286c91e281ed2939e15c50044e71f163d",
+      "receipt": {
+        "hash": "0xd9b95a8dc329aa47a5420c681d91300286c91e281ed2939e15c50044e71f163d",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:11:15.206246+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd9b95a8dc329aa47a5420c681d91300286c91e281ed2939e15c50044e71f163d",
+        "observedAt": "2026-10-03T16:11:51.383Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:11:04.471Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 0,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "MATCH",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": ""
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "1",
+            "received_gen": "3",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:11:51.385Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 1791130275,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "AWARDED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+          },
+          "accounting": {
+            "credit_gen": "2",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "2",
+          "creditsGEN": {
+            "provider": "1",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      },
+      "afterActorGEN": "16.660327516916653055"
+    },
+    "browser-match-redeem": {
+      "role": "holder",
+      "actor": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+      "method": "redeem",
+      "args": [
+        "demo-browser-match-v1"
+      ],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000378508800010352",
+      "beforeContractGEN": "2",
+      "beforeActorGEN": "16.660327516916653055",
+      "startedAt": "2026-10-03T16:12:10.301Z",
+      "stage": "finalized",
+      "hash": "0x518879dd7160bdaeb3e972d4a075edcb08e11bef439e1f4538781451d01c42e2",
+      "receipt": {
+        "hash": "0x518879dd7160bdaeb3e972d4a075edcb08e11bef439e1f4538781451d01c42e2",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:12:11.442178+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x518879dd7160bdaeb3e972d4a075edcb08e11bef439e1f4538781451d01c42e2",
+        "observedAt": "2026-10-03T16:12:46.418Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:11:58.786Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 1791130275,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "AWARDED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+          },
+          "accounting": {
+            "credit_gen": "2",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "2",
+          "creditsGEN": {
+            "provider": "1",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:12:46.421Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 1791130275,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "REDEEMED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+          },
+          "accounting": {
+            "credit_gen": "2",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "2",
+          "creditsGEN": {
+            "provider": "1",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      },
+      "afterActorGEN": "16.660248884916652232"
+    },
+    "browser-match-withdraw-provider": {
+      "role": "provider",
+      "actor": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+      "method": "withdraw_credit",
+      "args": [],
+      "valueGEN": "0",
+      "feeBudgetGEN": "0.000759796800010352",
+      "beforeContractGEN": "2",
+      "beforeActorGEN": "63.292926760082936657",
+      "startedAt": "2026-10-03T16:13:02.395Z",
+      "stage": "finalized",
+      "hash": "0xccbcab60f8a98f5ac740f630871c3fd738db755059afef2a603cd58e6e288852",
+      "receipt": {
+        "hash": "0xccbcab60f8a98f5ac740f630871c3fd738db755059afef2a603cd58e6e288852",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:13:04.028970+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xccbcab60f8a98f5ac740f630871c3fd738db755059afef2a603cd58e6e288852",
+        "observedAt": "2026-10-03T16:13:39.578Z"
+      },
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:12:53.606Z",
+          "option": null,
+          "accounting": {
+            "credit_gen": "2",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "2"
+          },
+          "contractBalanceGEN": "2",
+          "creditsGEN": {
+            "provider": "1",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:13:39.580Z",
+          "option": null,
+          "accounting": {
+            "credit_gen": "1",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "3"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        }
+      },
+      "afterActorGEN": "64.292800455082935834",
+      "transferProof": {
+        "expectedGEN": "1",
+        "contractDecreaseGEN": "1",
+        "recipientNetIncreaseGEN": "0.999873694999999177",
+        "nativeMessages": [
+          {
+            "messageType": "external",
+            "recipient": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "valueGEN": "1",
+            "emptyData": true,
+            "onAcceptance": false
+          }
+        ],
+        "nativeMessageBound": true,
+        "zeroCredit": true,
+        "proven": true
+      }
+    },
+    "browser-match-withdraw-buyer": {
+      "source": "actual Chrome OKX wallet",
+      "role": "browserBuyer",
+      "actor": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "method": "withdraw_credit",
+      "args": [],
+      "valueGEN": "0",
+      "hash": "0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+      "stage": "finalized",
+      "receipt": {
+        "hash": "0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+        "stage": "finalized",
+        "status": "FINALIZED",
+        "executionResult": "FINISHED_WITH_RETURN",
+        "returnCode": null,
+        "contractAddress": null,
+        "triggeredTransactions": [],
+        "createdAt": "2026-10-03T16:15:43.635152+00:00",
+        "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed",
+        "observedAt": "2026-10-03T16:16:59.295Z"
+      },
+      "beforeContractGEN": "1",
+      "beforeActorGEN": "1.174270085750103032",
+      "afterActorGEN": "2.174143780750102209",
+      "canonical": {
+        "before": {
+          "at": "2026-10-03T16:13:51.135Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 1791130275,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "REDEEMED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+          },
+          "accounting": {
+            "credit_gen": "1",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "3"
+          },
+          "contractBalanceGEN": "1",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "1"
+          },
+          "browserBuyerBalanceGEN": "1.174270085750103032"
+        },
+        "after": {
+          "at": "2026-10-03T16:16:59.298Z",
+          "option": {
+            "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "chain_id": 61997,
+            "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+            "deadline": 1791053548,
+            "exercise_deadline": 1791045604,
+            "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+            "id": "demo-browser-match-v1",
+            "offer": {
+              "deliverables": "A single reading reservation lasting sixty minutes",
+              "purpose": "Book a private session for reading a research paper",
+              "restrictions": "Copies must not be shared and the source must be credited"
+            },
+            "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+            "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+            "redeem_deadline": 1791130275,
+            "review_count": 1,
+            "scope": {
+              "deliverables": "One private one-hour reading session",
+              "purpose": "Reserve one research-paper reading session",
+              "restrictions": "No redistribution; attribution is required"
+            },
+            "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+            "slot": "browser-match-slot-v1",
+            "status": "REDEEMED",
+            "title": "Research reading reservation",
+            "window": 1800,
+            "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+          },
+          "accounting": {
+            "credit_gen": "0",
+            "invariant": true,
+            "locked_gen": "0",
+            "received_gen": "4",
+            "withdrawn_gen": "4"
+          },
+          "contractBalanceGEN": "0",
+          "creditsGEN": {
+            "provider": "0",
+            "holder": "0",
+            "buyer": "0",
+            "browserBuyer": "0"
+          },
+          "browserBuyerBalanceGEN": "2.174143780750102209"
+        }
+      },
+      "transferProof": {
+        "expectedGEN": "1",
+        "contractDecreaseGEN": "1",
+        "recipientNetIncreaseGEN": "0.999873694999999177",
+        "nativeMessages": [
+          {
+            "messageType": "external",
+            "recipient": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+            "valueGEN": "1",
+            "emptyData": true,
+            "onAcceptance": false
+          }
+        ],
+        "proven": true
+      }
     }
   },
   "sourceCommit": "4dd8ecc9cde852456b60f3903f389b3ecd5a12a3",
@@ -1004,6 +2061,103 @@
       "id": "demo-match-v1",
       "deadline": 1791037487,
       "window": 1800,
+      "complete": true
+    },
+    "browser-match": {
+      "id": "demo-browser-match-v1",
+      "buyer": "0xbd733bc56ec4a55fa25c068b9306b0171335d199",
+      "deadline": 1791053548,
+      "window": 1800,
+      "beforeBrowserOffer": {
+        "at": "2026-10-03T15:54:32.389Z",
+        "option": {
+          "buyer": "",
+          "chain_id": 61997,
+          "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+          "deadline": 1791053548,
+          "exercise_deadline": 0,
+          "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+          "id": "demo-browser-match-v1",
+          "offer": null,
+          "offer_digest": "",
+          "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+          "redeem_deadline": 0,
+          "review_count": 0,
+          "scope": {
+            "deliverables": "One private one-hour reading session",
+            "purpose": "Reserve one research-paper reading session",
+            "restrictions": "No redistribution; attribution is required"
+          },
+          "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+          "slot": "browser-match-slot-v1",
+          "status": "ACTIVE",
+          "title": "Research reading reservation",
+          "window": 1800,
+          "winner": ""
+        },
+        "accounting": {
+          "credit_gen": "0",
+          "invariant": true,
+          "locked_gen": "0",
+          "received_gen": "2",
+          "withdrawn_gen": "2"
+        },
+        "contractBalanceGEN": "0",
+        "creditsGEN": {
+          "provider": "0",
+          "holder": "0",
+          "buyer": "0",
+          "browserBuyer": "0"
+        },
+        "browserBuyerBalanceGEN": "2.174348722000103855"
+      },
+      "beforeBrowserWithdrawal": {
+        "at": "2026-10-03T16:13:51.135Z",
+        "option": {
+          "buyer": "0xBd733BC56Ec4a55FA25C068B9306b0171335D199",
+          "chain_id": 61997,
+          "contract": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+          "deadline": 1791053548,
+          "exercise_deadline": 1791045604,
+          "holder": "0x45aD397c438397A702B53a7499a78D08961D39Db",
+          "id": "demo-browser-match-v1",
+          "offer": {
+            "deliverables": "A single reading reservation lasting sixty minutes",
+            "purpose": "Book a private session for reading a research paper",
+            "restrictions": "Copies must not be shared and the source must be credited"
+          },
+          "offer_digest": "ca2997893e21170431ef3eefd52755c466e25f87891e7fb4f3d8bfe95bd3d465",
+          "provider": "0xC495ef51618D03267A1f227aFe5b27B38c748272",
+          "redeem_deadline": 1791130275,
+          "review_count": 1,
+          "scope": {
+            "deliverables": "One private one-hour reading session",
+            "purpose": "Reserve one research-paper reading session",
+            "restrictions": "No redistribution; attribution is required"
+          },
+          "scope_digest": "b35deec2ac95611a00182984e48126ec98856bcfd5107512f0be2b9f4daf66a5",
+          "slot": "browser-match-slot-v1",
+          "status": "REDEEMED",
+          "title": "Research reading reservation",
+          "window": 1800,
+          "winner": "0x45aD397c438397A702B53a7499a78D08961D39Db"
+        },
+        "accounting": {
+          "credit_gen": "1",
+          "invariant": true,
+          "locked_gen": "0",
+          "received_gen": "4",
+          "withdrawn_gen": "3"
+        },
+        "contractBalanceGEN": "1",
+        "creditsGEN": {
+          "provider": "0",
+          "holder": "0",
+          "buyer": "0",
+          "browserBuyer": "1"
+        },
+        "browserBuyerBalanceGEN": "1.174270085750103032"
+      },
       "complete": true
     }
   }

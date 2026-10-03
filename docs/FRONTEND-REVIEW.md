@@ -149,3 +149,51 @@ cause. Independent TypeScript now includes api/ and server/; npm run check passe
 91 direct, 5 Node and 51 frontend tests with the production build. Source visuals
 remain unchanged. The enabled browser inventory is still IAB/MCP Apps only,
 so actual browser-wallet signing remains pending.
+
+## Chrome / OKX buyer journey — 2026-10-03
+
+The earlier IAB-only limitation is historical. Chrome now exposes real EVM
+extensions and the centered wallet picker lists MetaMask and OKX Wallet. The
+owner selected OKX. The connected buyer is
+0xbd733bc56ec4a55fa25c068b9306b0171335d199; no key was imported or injected.
+
+On the production offer page for demo-browser-match-v1, the actual frontend
+quoted 1 GEN and a 0.000378529200010352 GEN fee budget. The owner confirmed in
+OKX. The actual transaction is
+0xbc256bcb121a8cc1e02e0b7e0e75e7ad9056765c6398e4076f17afd7629dc845,
+FINALIZED / FINISHED_WITH_RETURN. Receipt and decoded ABI bind the sender,
+contract, entity, ratified scope digest, 1 GEN and the exact three clauses.
+The app reloaded canonical OFFERED state after finalization.
+
+Authorized script-signed provider and holder actions then finalized endorsement,
+semantic MATCH in all three dimensions, 1 GEN exercise, redemption and provider
+withdrawal. They are counterparty evidence, not browser-wallet signatures.
+Chrome Refresh reservation reads the same finalized semantic verdict. Account
+reads the buyer's actual 1 GEN refund credit. The owner confirmed withdrawal in
+OKX; transaction
+0xb12a743cd5fadc89d632fd490c3a7be5d148a207d80de002c4fc27c0559e0aed
+finalized successfully and Account reloaded 0 GEN credit. Native message binding
+and independent balances prove a 1 GEN contract decrease and
+0.999873694999999177 GEN net receipt. All contract credit, locked value and native
+balance end at 0 GEN. browser-wallet.json and browser-match-lifecycle.json retain
+the exact proof. No script signs for this browser buyer.
+
+The browser tool rejects chrome-extension notification URLs, so the owner
+performs wallet confirmation directly. Existing production browser state and
+form screenshots are preserved under evidence/production/chrome-*.png.
+The wallet modal visibly lists OKX twice through discovered provider paths;
+this observation is retained and no automatic first-provider choice is claimed.
+The clickable account menu exposes Disconnect. Actual logout clears the selected
+account and removes write controls; explicit selection of the owner's chosen OKX
+reconnects the same account. Captured console errors/warnings are empty. Actual
+browser evidence covers buyer offer and withdrawal. All ten writes have local
+wrapper/control/finality/reload tests; the counterparty actions and live failure/
+retry paths are not claimed as browser-executed.
+
+A minimal date-formatting change uses English month names while retaining local
+timezone display. The verified local UIUX Content / Date Formatting result
+supports unambiguous displayed dates. Offer/withdrawal screenshots precede that
+deployment; chrome-final-canonical.png verifies English dates, restored OKX and
+0 GEN credit after reloading the final READY production deployment. After this
+change, npm run check passes 91 direct, 5 Node and 51
+frontend cases, TypeScript and the production build, with no critical skip.

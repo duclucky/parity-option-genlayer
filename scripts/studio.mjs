@@ -141,7 +141,76 @@ async function snapshot(id){
   const value={at:new Date().toISOString(),option:id?await read(dep.contractAddress,'get_option',[id]):null,
     accounting:await read(dep.contractAddress,'get_accounting'),contractBalanceGEN:await balance(dep.contractAddress),creditsGEN:{}};
   for(const [role,a] of Object.entries(accounts))value.creditsGEN[role]=await read(dep.contractAddress,'get_credit',[a.address]);
+  const browserBuyer=journal.cases?.['browser-match']?.buyer;
+  if(browserBuyer){value.creditsGEN.browserBuyer=await read(dep.contractAddress,'get_credit',[browserBuyer]);value.browserBuyerBalanceGEN=await balance(browserBuyer);}
   return value;
+}
+async function prepareBrowserBuyer(buyer){
+  await verifyNetwork();
+  if(!isAddress(buyer)||!accounts.provider||!accounts.holder||[accounts.provider.address,accounts.holder.address].some(a=>a.toLowerCase()===buyer.toLowerCase()))throw new Error('Invalid browser participant');
+  journal.cases??={};const kind='browser-match';
+  if(!journal.cases[kind]){journal.cases[kind]={id:'demo-browser-match-v1',buyer,deadline:Math.floor(Date.now()/1000)+10800,window:1800};await persist();}
+  const item=journal.cases[kind];if(item.buyer.toLowerCase()!==buyer.toLowerCase())throw new Error('Browser participant is locked');
+  const dep=await deployment();if(!dep)throw new Error('No verified deployment');
+  let current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(!current)await step('browser-match-create','provider','create_option',[item.id,'Research reading reservation','browser-match-slot-v1',accounts.holder.address,
+    'Reserve one research-paper reading session','One private one-hour reading session','No redistribution; attribution is required',item.deadline,item.window],0n,item.id);
+  current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(current.status==='DRAFT')await step('browser-match-accept','holder','accept_option',[item.id,current.scope_digest],0n,item.id);
+  current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(current.status==='ACTIVE'&&!item.beforeBrowserOffer){item.beforeBrowserOffer=await snapshot(item.id);await persist();}
+  emit({kind:'browser buyer preparation',id:item.id,buyer:item.buyer,canonicalStatus:current.status,priceGEN:'1',frontendPath:`/reservation/${item.id}`});
+}
+async function recordBrowserWrite(key,hash,method,valueGEN,before){
+  if(!/^0x[0-9a-fA-F]{64}$/.test(hash??''))throw new Error('Invalid browser transaction hash');
+  const item=journal.cases?.['browser-match'],dep=await deployment();if(!item||!before||!dep)throw new Error('Browser checkpoint unavailable');
+  const {raw,proof}=await wait(hash),data=raw.data??{};
+  const call=abi.calldata.decode(Buffer.from(data.calldata??'','base64')),get=k=>call instanceof Map?call.get(k):call[k],args=get('args')??[];
+  if(raw.from_address?.toLowerCase()!==item.buyer.toLowerCase()||raw.to_address?.toLowerCase()!==dep.contractAddress.toLowerCase()
+    ||get('')!==method||BigInt(data.user_value??raw.value??0)!==BigInt(valueGEN)*10n**18n
+    ||(method==='submit_offer'&&(args[0]!==item.id||args[1]!==before.option.scope_digest))
+    ||(method==='withdraw_credit'&&args.length!==0))throw new Error('Browser transaction binding failed');
+  const after=await snapshot(item.id);
+  if(method==='submit_offer'&&(after.option.buyer.toLowerCase()!==item.buyer.toLowerCase()||after.option.status!=='OFFERED'
+    ||['purpose','deliverables','restrictions'].some((field,i)=>after.option.offer[field]!==args[i+2])))throw new Error('Browser offer state binding failed');
+  const previous=journal.attempts[key];if(previous&&previous.hash!==hash)throw new Error('Browser transaction already recorded');
+  journal.attempts[key]={source:'actual Chrome OKX wallet',role:'browserBuyer',actor:item.buyer,method,args,valueGEN,hash,stage:proof.stage,receipt:proof,
+    beforeContractGEN:before.contractBalanceGEN,beforeActorGEN:before.browserBuyerBalanceGEN,afterActorGEN:after.browserBuyerBalanceGEN,canonical:{before,after}};
+  await persist();return {raw,before,after};
+}
+async function respondBrowserBuyer(offerHash){
+  await verifyNetwork();const item=journal.cases?.['browser-match'],dep=await deployment();if(!item||!dep)throw new Error('Browser case unavailable');
+  let current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(current.status==='OFFERED')await recordBrowserWrite('browser-match-offer',offerHash,'submit_offer','1',item.beforeBrowserOffer);
+  if(!journal.attempts['browser-match-offer']||journal.attempts['browser-match-offer'].hash!==offerHash||current.buyer.toLowerCase()!==item.buyer.toLowerCase())throw new Error('Verified browser offer required');
+  if(current.status==='OFFERED')await step('browser-match-endorse','provider','endorse_offer',[item.id,current.offer_digest],0n,item.id);
+  current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(current.status==='ENDORSED')await step('browser-match-review','holder','review_offer',[item.id,current.review_count+1],0n,item.id);
+  current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(!['MATCH','AWARDED','REDEEMED'].includes(current.status))throw new Error('Unexpected canonical verdict; no automatic semantic retry');
+  const review=await read(dep.contractAddress,'get_review',[item.id,current.review_count]);
+  if(review.outcome!=='MATCH')throw new Error('Expected MATCH; no automatic semantic retry');
+  await save(resolve(evidence,'browser-match-review.json'),{network:'studio-dev',contractAddress:dep.contractAddress,review});
+  if(current.status==='MATCH')await step('browser-match-exercise','holder','exercise_option',[item.id],10n**18n,item.id);
+  current=await read(dep.contractAddress,'get_option',[item.id]);
+  if(current.status==='AWARDED'&&current.winner.toLowerCase()===accounts.holder.address.toLowerCase())await step('browser-match-redeem','holder','redeem',[item.id],0n,item.id);
+  await withdraw('provider','browser-match-withdraw-provider');
+  if(!item.beforeBrowserWithdrawal){item.beforeBrowserWithdrawal=await snapshot(item.id);await persist();}
+  emit({kind:'browser refund ready',...(await snapshot(item.id)),browserWithdrawPath:'/account'});
+}
+async function finishBrowserBuyer(withdrawHash){
+  await verifyNetwork();const item=journal.cases?.['browser-match'],dep=await deployment();if(!item||!dep)throw new Error('Browser case unavailable');
+  const {raw,before,after}=await recordBrowserWrite('browser-match-withdraw-buyer',withdrawHash,'withdraw_credit','0',item.beforeBrowserWithdrawal);
+  const units=v=>{const [whole,fraction='']=v.split('.');return BigInt(whole)*10n**18n+BigInt(fraction.padEnd(18,'0'));};
+  const expected=BigInt(before.creditsGEN.browserBuyer)*10n**18n,decreased=units(before.contractBalanceGEN)-units(after.contractBalanceGEN),
+    increase=units(after.browserBuyerBalanceGEN)-units(before.browserBuyerBalanceGEN),native=nativeTransferMessageProof(raw,dep.contractAddress,item.buyer,expected);
+  const proven=expected===10n**18n&&decreased===expected&&increase>0n&&increase<=expected&&native.bound
+    &&after.creditsGEN.browserBuyer==='0'&&after.accounting.locked_gen==='0'&&after.accounting.credit_gen==='0'&&after.contractBalanceGEN==='0'&&after.option.status==='REDEEMED';
+  journal.attempts['browser-match-withdraw-buyer'].transferProof={expectedGEN:formatUnits(expected,18),contractDecreaseGEN:formatUnits(decreased,18),recipientNetIncreaseGEN:formatUnits(increase,18),nativeMessages:native.messages,proven};
+  item.complete=proven;await persist();await save(resolve(evidence,'browser-match-lifecycle.json'),{network:'studio-dev',contractAddress:dep.contractAddress,sourceCommit:dep.sourceCommit,
+    browserBuyer:item.buyer,browserWrites:['submit_offer','withdraw_credit'],otherActors:'authorized script-signed provider and holder',...after,complete:proven});
+  emit({kind:'actual browser buyer lifecycle',complete:proven,transferProof:journal.attempts['browser-match-withdraw-buyer'].transferProof});
+  if(!proven)throw new Error('Browser native transfer proof incomplete');
 }
 async function metadataSmoke(){
   await inspect();const dep=await deployment();if(!dep)throw new Error('No verified deployment');
@@ -265,5 +334,6 @@ async function deploy(){
 try{
   const command=process.argv[2]??'inspect';
   if(command==='inspect')await inspect();else if(command==='smoke')await smoke();else if(command==='deploy')await deploy();else if(command==='metadata-smoke')await metadataSmoke();else if(command==='estimate-review')await estimateReview();else if(command==='lifecycle')await lifecycle(process.argv[3]??'match');
+  else if(command==='browser-prepare')await prepareBrowserBuyer(process.argv[3]);else if(command==='browser-respond')await respondBrowserBuyer(process.argv[3]);else if(command==='browser-finish')await finishBrowserBuyer(process.argv[3]);
   else throw new Error('Unknown command');
 }catch(error){emit({command:process.argv[2]??'inspect',failed:true,errorType:error?.name??'Error',rpcErrorCode:error?.safeCode??null,reason:['Network identity mismatch','Required authorized role unavailable','Exact-source smoke failed','Pending finality; inspect before any retry','Finalized deployment address unavailable','Contract must match committed source','Deployed config mismatch','Confirmed unsuccessful execution'].includes(error?.message)?error.message:'Operation did not complete; inspect safely before retrying.'});process.exitCode=1;}

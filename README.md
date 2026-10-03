@@ -55,9 +55,14 @@ The public [CI workflow](https://github.com/duclucky/parity-option-genlayer/acti
 runs the full local check on pushes and pull requests. A successful run must be
 matched to the current public commit when reviewing readiness.
 Production HTTP checks and browser canonical reads pass on the live app.
-Browser-wallet signatures remain pending: the available test browser has no
-wallet extension. The successful network lifecycle was signed by the local
-deployment script, which is separate evidence from browser signing.
+Chrome/OKX verifies the buyer's real 1 GEN offer and 1 GEN refund withdrawal
+for demo-browser-match-v1. Both finalized successfully and reloaded canonical
+state. The native withdrawal decreases the contract balance by exactly 1 GEN;
+the wallet receives 0.999873694999999177 GEN net of fees. Provider and holder
+counterparty actions are authorized script-signed transactions, not browser
+writes. [Browser proof](docs/evidence/production/browser-wallet.json) and
+[complete lifecycle](docs/evidence/studio-dev/browser-match-lifecycle.json)
+retain that distinction. Logout and explicit OKX reconnection were verified.
 No simulated transaction, fee, balance or finality is presented as real state.
 
 DIFFERENT, UNCLEAR, expired-window allocation, adversarial and recovery branches
@@ -107,6 +112,16 @@ environment variables. The committed CI installs the pinned source requirements;
    allocation/redemption, exact native transfer decreases and zero liability.
 6. Set `VITE_CONTRACT_ADDRESS` to the verified deployment, build the frontend,
    and inspect finalized reservations. Browser signing requires a real EVM wallet.
+7. For the recorded mixed-actor browser demonstration, run
+   `node scripts/studio.mjs browser-prepare <authorized public buyer address>`.
+   Use the app and selected wallet to submit the 1 GEN offer. Run
+   `node scripts/studio.mjs browser-respond <actual browser offer hash>` to verify
+   its receipt/ABI and resume the authorized provider/holder responses. Use
+   Account to withdraw the buyer's refund in the browser, then run
+   `node scripts/studio.mjs browser-finish <actual browser withdrawal hash>` to
+   prove native transfer and zero liability. Helpers never sign for the browser
+   buyer. Inspect existing hashes/state before retries; wallet confirmation stays
+   under the owner's control.
 
 For read-only live verification run
 `.venv/Scripts/gltest tests/integration --fee-profile frontend/fee-profile.json`.

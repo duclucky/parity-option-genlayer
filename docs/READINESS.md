@@ -1,8 +1,8 @@
 # ParityOption readiness audit
 
-Status: implementation and network lifecycle verified; final Projects acceptance
-is pending actual browser-wallet signing. This is a draft submission packet,
-not a submitted or accepted contribution. Category is Projects.
+Status: implementation, Studio Dev lifecycle and Chrome/OKX buyer offer/refund
+are verified. This is a copy-ready submission packet, not a submitted or accepted
+contribution. Category is Projects. Official acceptance is not claimed.
 
 ## Verified facts
 
@@ -23,6 +23,11 @@ not a submitted or accepted contribution. Category is Projects.
 - Vercel production is READY; HTTP 200, project identity and React root pass.
   Browser deep links read seven canonical events, REDEEMED and three MATCH dimensions.
   The observed production browser console contains no error/warning entries.
+- Chrome/OKX buyer offer and withdrawal both finalize successfully and reload
+  canonical state. Withdrawal proves an exact 1 GEN native decrease and
+  0.999873694999999177 GEN recipient net increase. The second MATCH case ends
+  REDEEMED; global received/withdrawn are 4 GEN each, with zero liability.
+  Provider and holder counterparty transactions are script-signed.
 - The public repository preserves reviewed commit history and only allowlisted
   deliverables. Ignored env, runtime and local control files remain private.
 
@@ -57,19 +62,23 @@ All ten writes have real SDK wrappers, contextual controls, tests, successful
 finality handling and canonical reload paths. The chosen provider/account is
 configured on the actual SDK client, with no raw-string per-call override.
 Discovery, EVM chain switch/add, picker, account menu and logout have focused tests.
-Production wallet modal reports no browser wallet detected in the available
-IAB browser. Script signatures and offline SDK ABI checks are not counted as
-browser signatures. Real user wallet execution remains PENDING_REAL_EVIDENCE.
+Production Chrome wallet selection uses the owner's explicit OKX choice. Actual
+buyer submit_offer and withdraw_credit signatures, successful finality and
+canonical reload are retained in evidence/production/browser-wallet.json. The
+account menu's logout clears the account and write controls; OKX reconnection
+works. The old IAB missing-wallet screenshot is historical. Script signatures
+and offline SDK ABI checks are not counted as browser signatures. Counterparty
+actions are script-signed; live browser rejection/retry is not claimed.
 
-## Copy-ready draft packet
+## Copy-ready packet
 
 Recommended category: Projects.
 
 Title: ParityOption: Validator-Reviewed First-Choice Reservations.
 
-Description (979 characters; plain text field):
+Description (965 characters; plain text field):
 
-ParityOption protects a protocol-created first-choice reservation. A provider locks three scope clauses and a holder ratifies their digest; an outside buyer commits 1 GEN and the provider endorses the exact offer. GenLayer validators independently compare the meaning of purpose, deliverables and restrictions from authenticated onchain declarations. Deterministic provenance and settlement checks precede consequences. MATCH opens a holder exercise window; DIFFERENT awards the buyer; UNCLEAR remains non-allocating with recovery. One reusable contract exposes allocation, redemption and pull credits. Studio Dev proves finalized MATCH, 1 GEN exercise, redemption, two exact 1 GEN withdrawals and zero liability. Local lint, 91 direct, 5 SDK/transfer and 51 frontend tests pass; one live read-only test passes. Public Vercel canonical reads are verified. Browser-wallet signing remains pending; external delivery, legal enforceability, integrations and adoption are not claimed.
+ParityOption protects protocol-created first-choice reservations. A provider locks three scope clauses; a holder ratifies their digest; an outside buyer commits 1 GEN and the provider endorses the exact offer. GenLayer validators independently compare purpose, deliverables and restrictions from authenticated onchain declarations. Deterministic provenance and settlement invariants precede consequences. MATCH opens holder exercise; DIFFERENT awards the buyer; UNCLEAR stays non-allocating with recovery. One reusable contract owns allocation, redemption and pull credits. Studio Dev proves finalized MATCH, 1 GEN exercise, redemption, exact 1 GEN withdrawals and zero liability. Chrome/OKX proves buyer offer and refund; provider/holder actions are script-signed. Lint, 91 direct, 5 SDK/transfer, 51 frontend and one live read-only case pass. Public Vercel read/write paths work. External delivery, legal enforceability, integrations and adoption are not claimed.
 
 Evidence:
 
@@ -80,12 +89,12 @@ Evidence:
 - [CI workflow](https://github.com/duclucky/parity-option-genlayer/actions/workflows/check.yml):
   select the successful run for the current public commit; an older run is not current-tip proof.
 - [Live frontend](https://parity-option-genlayer.vercel.app): canonical read proof;
-  browser write proof pending.
+  [Chrome/OKX buyer write proof](https://github.com/duclucky/parity-option-genlayer/blob/main/docs/evidence/production/browser-wallet.json).
 
 Why Projects: the contribution includes the complete user-facing reservation
-product and reusable contract. Its real wallet adapter and canonical reads belong
-to that product. It is not an already-accepted project milestone; final readiness
-still requires the browser-signing evidence stated above.
+product and reusable contract. Its real wallet adapter, canonical reads and buyer
+offer/refund journey belong to that product. It is not an already-accepted project
+milestone and official acceptance remains pending.
 
 ## Honest remaining uncertainty
 

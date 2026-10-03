@@ -1,0 +1,13 @@
+[
+  ".gitattributes", ".gitignore", ".github/workflows/check.yml", "LICENSE", "README.md",
+  "contracts/parity_option.py", "gltest.config.yaml", "package.json", "package-lock.json", "pytest.ini", "requirements.txt", "requirements-lock.txt",
+  "docs/README.md", "docs/FRONTEND-REVIEW.md", "docs/RUNTIME-VERIFICATION.md",
+  "docs/evidence/local/frontend-deployed-read.png", "docs/evidence/local/frontend-home.png", "docs/evidence/local/frontend-wallet-missing.png", "docs/evidence/local/frontend-rpc-home.png", "docs/evidence/local/frontend-responsive.json",
+  "docs/evidence/studio-dev/attempts.json", "docs/evidence/studio-dev/deployment.json", "docs/evidence/studio-dev/deployment-explorer.png", "docs/evidence/studio-dev/match-lifecycle.json", "docs/evidence/studio-dev/match-review.json", "docs/evidence/studio-dev/source-smoke.json", "docs/evidence/studio-dev/metadata-smoke.json",
+  "frontend/.env.example", "frontend/index.html", "frontend/package.json", "frontend/fee-profile.json", "frontend/vite.config.ts", "frontend/tsconfig.json",
+  "frontend/api/ic-rpc.ts", "frontend/api/wallet-rpc.ts", "frontend/api/rpc.ts",
+  "frontend/src/App.tsx", "frontend/src/adapter.ts", "frontend/src/main.tsx", "frontend/src/model.ts", "frontend/src/wallet.tsx", "frontend/src/types.ts", "frontend/src/styles.css", "frontend/src/simulation-clock.ts", "frontend/src/sdk-adapter.ts", "frontend/src/receipt.ts", "frontend/src/network.ts",
+  "frontend/tests/wallet.test.ts", "frontend/tests/receipt.test.ts", "frontend/tests/network.test.ts", "frontend/tests/model.test.ts", "frontend/tests/journey.test.tsx",
+  "scripts/studio.mjs", "scripts/sdk-adapter.test.mjs", "scripts/public-hygiene.mjs", "scripts/public-files.json", "scripts/native-transfer.test.mjs", "scripts/native-transfer.mjs", "scripts/lint_contracts.py", "scripts/check.mjs",
+  "tests/direct/test_metadata_and_withdrawal.py", "tests/direct/test_initial_safety.py", "tests/direct/test_adversarial.py", "tests/direct/conftest.py", "tests/integration/test_live_readback.py"
+]

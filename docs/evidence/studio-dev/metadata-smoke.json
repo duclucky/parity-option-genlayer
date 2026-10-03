@@ -1,0 +1,85 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "sourceHash": "ddc536b5d5cc405add971d497a206d33e1809499d6f33d9d16fad979c6397689",
+  "at": "2026-10-03T13:21:39.989Z",
+  "methods": {
+    "accept_option": {
+      "readonly": false,
+      "payable": false
+    },
+    "can_redeem": {
+      "readonly": true,
+      "payable": false
+    },
+    "create_option": {
+      "readonly": false,
+      "payable": false
+    },
+    "endorse_offer": {
+      "readonly": false,
+      "payable": false
+    },
+    "exercise_option": {
+      "readonly": false,
+      "payable": true
+    },
+    "finalize_option": {
+      "readonly": false,
+      "payable": false
+    },
+    "get_accounting": {
+      "readonly": true,
+      "payable": false
+    },
+    "get_config": {
+      "readonly": true,
+      "payable": false
+    },
+    "get_credit": {
+      "readonly": true,
+      "payable": false
+    },
+    "get_history": {
+      "readonly": true,
+      "payable": false
+    },
+    "get_option": {
+      "readonly": true,
+      "payable": false
+    },
+    "get_review": {
+      "readonly": true,
+      "payable": false
+    },
+    "list_options": {
+      "readonly": true,
+      "payable": false
+    },
+    "recover_offer": {
+      "readonly": false,
+      "payable": false
+    },
+    "redeem": {
+      "readonly": false,
+      "payable": false
+    },
+    "review_offer": {
+      "readonly": false,
+      "payable": false
+    },
+    "submit_offer": {
+      "readonly": false,
+      "payable": true
+    },
+    "withdraw_credit": {
+      "readonly": false,
+      "payable": false
+    }
+  },
+  "nonpayableValueGEN": "1",
+  "simulationExecutionResult": "REJECTED_NONPAYABLE_RPC",
+  "unchanged": true,
+  "passed": true
+}

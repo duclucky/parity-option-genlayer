@@ -1,0 +1,31 @@
+{
+  "network": "studio-dev",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "review": {
+    "at": 1791036183,
+    "attempt": 1,
+    "coverage": [
+      "scope",
+      "offer"
+    ],
+    "decisions": [
+      {
+        "class": "MATCH",
+        "id": "purpose"
+      },
+      {
+        "class": "MATCH",
+        "id": "deliverables"
+      },
+      {
+        "class": "MATCH",
+        "id": "restrictions"
+      }
+    ],
+    "offer_digest": "d6464d709b2d2c59a8a5c4364c40cb15eb4db6d5e0b469106a14b35be3f46162",
+    "option_id": "demo-match-v1",
+    "outcome": "MATCH",
+    "root_ids": [],
+    "scope_digest": "d6a24cb1da35f798e3e51c0e80b801cf7c6f6720d6111f8af6f2f1194cdb2a40"
+  }
+}

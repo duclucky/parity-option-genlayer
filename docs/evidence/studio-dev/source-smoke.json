@@ -1,0 +1,10 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "sourceHash": "ddc536b5d5cc405add971d497a206d33e1809499d6f33d9d16fad979c6397689",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "at": "2026-10-03T13:04:26.934Z",
+  "kind": "unsigned exact-source constructor simulation",
+  "executionResult": "SUCCESS",
+  "feeAccounting": {}
+}

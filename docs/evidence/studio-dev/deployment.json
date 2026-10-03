@@ -1,0 +1,15 @@
+{
+  "network": "studio-dev",
+  "chainId": 61997,
+  "endpoint": "https://studio-next.genlayer.com/api",
+  "walletEndpoint": "https://studio-dev.genlayer.com/api",
+  "sourceHash": "ddc536b5d5cc405add971d497a206d33e1809499d6f33d9d16fad979c6397689",
+  "sourceCommit": "4dd8ecc9cde852456b60f3903f389b3ecd5a12a3",
+  "runner": "5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng",
+  "api": "v0.3.0",
+  "sdk": "genlayer-js@2.0.0-rc.1",
+  "contractAddress": "0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "deployHash": "0xa44709cfda951f7d59fee5f511fe7846d03bd8bf4035af1cc954e5940376994e",
+  "explorer": "https://explorer-studio-dev.genlayer.com/address/0x6bA8F313f2040E7774978aF37f8adAd875a3AF54",
+  "verifiedAt": "2026-10-03T13:14:01.633Z"
+}

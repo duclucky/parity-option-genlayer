@@ -1,0 +1,35 @@
+{
+  "scope": "Local frontend geometry, not RPC or wallet proof",
+  "results": [
+    {
+      "heading": "Create a priority reservation",
+      "height": 812,
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "heading": "Create a priority reservation",
+      "height": 1024,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "heading": "Create a priority reservation",
+      "height": 768,
+      "scrollWidth": 1009,
+      "width": 1024
+    },
+    {
+      "heading": "Create a priority reservation",
+      "height": 900,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "heading": "Create a priority reservation",
+      "height": 375,
+      "scrollWidth": 797,
+      "width": 812
+    }
+  ]
+}
